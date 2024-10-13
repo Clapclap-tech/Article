@@ -4,75 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher's Day Event Article - Twitter Style</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to CSS -->
 </head>
 <body>
-    <aside class="sidebar">
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Explore</a></li>
-                <li><a href="#">Notifications</a></li>
-                <li><a href="#">Messages</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">More</a></li>
-            </ul>
-        </nav>
-    
-        <div class="sidebar-profile">
-            <img src="img/CTU_new_logo.png" alt="Profile Picture" class="sidebar-profile-pic">
-            <div class="sidebar-user-info">
-                <h3>CTU-DANAO CAMPUS</h3>
-                <p>@ctu_dc</p>
-            </div>
+    <!-- Login and Register Forms -->
+    <div id="auth-section">
+        <div id="register-form" class="form-container">
+            <h2>Register</h2>
+            <input type="text" id="reg-username" placeholder="Enter username" required>
+            <input type="password" id="reg-password" placeholder="Enter password" required>
+            <button onclick="register()">Register</button>
         </div>
-    </aside>
-    
 
-    <div class="main-content">
-        <header>
-            <div class="container">
-                <h1>UNIVERSITY DIGEST</h1>
+        <div id="login-form" class="form-container">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Enter username" required>
+            <input type="password" id="login-password" placeholder="Enter password" required>
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <!-- Main Content Section (hidden until login) -->
+    <div id="main-section" style="display: none;">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Notifications</a></li>
+                    <li><a href="#">Messages</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </nav>
+        
+            <div class="sidebar-profile">
+                <img src="img/CTU_new_logo.png" alt="Profile Picture" class="sidebar-profile-pic">
+                <div class="sidebar-user-info">
+                    <h3 id="username">CTU-DANAO CAMPUS</h3>
+                    <p id="userhandle">@ctu_dc</p>
+                </div>
             </div>
-        </header>
+        </aside>
 
-        <main>
-            <div class="container ud-card">
-                <div class="profile-section">
-                    <img src="img/CTU_new_logo.png" alt="Profile Picture" class="profile-pic">
-                    <div class="user-info">
-                        <h2>CTU-DANAO CAMPUS</h2>
-                        <p>@ctu_dc • 2h</p>
+        <div class="main-content">
+            <header>
+                <div class="container">
+                    <h1>UNIVERSITY DIGEST</h1>
+                </div>
+            </header>
+
+            <main>
+                <div class="container ud-card">
+                    <div class="profile-section">
+                        <img src="img/CTU_new_logo.png" alt="Profile Picture" class="profile-pic">
+                        <div class="user-info">
+                            <h2>CTU-DANAO CAMPUS</h2>
+                            <p>@ctu_dc • 2h</p>
+                        </div>
+                    </div>
+
+                    <div class="ud-content">
+                        <p>The much-anticipated Teacher’s Day celebration held at CTU-DANAO took an unexpected turn when heavy rains poured down, causing disruptions to the event. 😔</p>
+                        <img src="img/teachers-day-event.jpg" alt="Teacher's Day Event under rain" class="tweet-image">
+                        <p>What was meant to be a joyous and heartfelt occasion turned into disappointment. Students and teachers were disheartened by the rain, with some students feeling especially upset by the sudden change in weather.</p>
+                        <img src="img/2.jpg" alt="Disheartened students after the event" class="tweet-image">
+                        <p>"We were excited to show our appreciation to our teachers, but the rain just ruined the moment for us," said one student. #TeachersDay #Rain</p>
+                        <img src="img/3.jpg" alt="Student alone at the red table after event" class="tweet-image">
+                        <p>Despite the unexpected challenges, the appreciation for teachers remained strong. ❤️ #Appreciation #BetterDaysAhead</p>
+                    </div>
+
+                    <div class="cta-actions">
+                        <p>Reply • Share • Like</p>
                     </div>
                 </div>
+            </main>
 
-                <div class="ud-content">
-                    <p>The much-anticipated Teacher’s Day celebration held at [School Name] took an unexpected turn when heavy rains poured down, causing disruptions to the event. 😔</p>
-
-                    <img src="img/teachers-day-event.jpg" alt="Teacher's Day Event under rain" class="tweet-image">
-
-                    <p>What was meant to be a joyous and heartfelt occasion turned into disappointment. Students and teachers were disheartened by the rain, with some students feeling especially upset by the sudden change in weather.</p>
-
-                    <img src="img/2.jpg" alt="Disheartened students after the event" class="tweet-image">
-
-                    <p>"We were excited to show our appreciation to our teachers, but the rain just ruined the moment for us," said one student. #TeachersDay #Rain</p>
-
-                    <img src="img/3.jpg" alt="Student alone at the red table after event" class="tweet-image">
-
-                    <p>Despite the unexpected challenges, the appreciation for teachers remained strong. ❤️ #Appreciation #BetterDaysAhead</p>
+            <footer>
+                <div class="container">
+                    <p>&copy; 2024 UNIVERSITY DIGEST</p>
                 </div>
-
-                <div class="cta-actions">
-                    <p>Reply • Share • Like</p>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            <div class="container">
-                <p>&copy; 2024 UNIVERSITY DIGEST</p>
-            </div>
-        </footer>
+            </footer>
+        </div>
     </div>
+
+    <script src="js/auth.js"></script> <!-- Link to JS -->
 </body>
 </html>
