@@ -1,4 +1,3 @@
-
 function register() {
     var username = document.getElementById("reg-username").value;
     var password = document.getElementById("reg-password").value;
@@ -6,8 +5,7 @@ function register() {
     if (username && password) {
         localStorage.setItem(username, password);
         alert("Registration successful! You can now log in.");
-        document.getElementById("reg-username").value = "";
-        document.getElementById("reg-password").value = "";
+        showLoginForm();
     } else {
         alert("Please fill out all fields.");
     }
@@ -29,12 +27,26 @@ function login() {
 }
 
 function showMainContent(username) {
-
     document.getElementById("auth-section").style.display = "none";
     document.getElementById("main-section").style.display = "block";
-    
     document.getElementById("username").innerText = username;
     document.getElementById("userhandle").innerText = "@" + username;
+}
+
+
+function signOut() {
+    localStorage.removeItem("loggedInUser");
+    location.reload();
+}
+
+function showRegisterForm() {
+    document.getElementById("login-form").style.display = "none";
+    document.getElementById("register-form").style.display = "block";
+}
+
+function showLoginForm() {
+    document.getElementById("login-form").style.display = "block";
+    document.getElementById("register-form").style.display = "none";
 }
 
 window.onload = function() {
@@ -42,7 +54,6 @@ window.onload = function() {
     if (loggedInUser) {
         showMainContent(loggedInUser);
     } else {
-        document.getElementById("auth-section").style.display = "block";
-        document.getElementById("main-section").style.display = "none";
+        showLoginForm();
     }
 }

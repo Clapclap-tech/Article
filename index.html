@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher's Day Event Article - Twitter Style</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Link to CSS -->
+    <title>Login - CTU Danao</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Login and Register Forms -->
-    <div id="auth-section">
-        <div id="register-form" class="form-container">
-            <h2>Register</h2>
-            <input type="text" id="reg-username" placeholder="Enter username" required>
-            <input type="password" id="reg-password" placeholder="Enter password" required>
-            <button onclick="register()">Register</button>
-        </div>
 
+    <div id="auth-section" class="wrapper">
         <div id="login-form" class="form-container">
             <h2>Login</h2>
             <input type="text" id="login-username" placeholder="Enter username" required>
             <input type="password" id="login-password" placeholder="Enter password" required>
             <button onclick="login()">Login</button>
+            <p class="switch-form">Don't have an account? <a href="#" onclick="showRegisterForm()">Sign up</a></p>
+        </div>
+
+        <div id="register-form" class="form-container" style="display: none;">
+            <h2>Register</h2>
+            <input type="text" id="reg-username" placeholder="Enter username" required>
+            <input type="password" id="reg-password" placeholder="Enter password" required>
+            <button onclick="register()">Register</button>
+            <p class="switch-form">Already have an account? <a href="#" onclick="showLoginForm()">Log in</a></p>
         </div>
     </div>
 
-    <!-- Main Content Section (hidden until login) -->
     <div id="main-section" style="display: none;">
         <aside class="sidebar">
             <nav>
@@ -36,7 +37,7 @@
                     <li><a href="#">Profile</a></li>
                 </ul>
             </nav>
-        
+
             <div class="sidebar-profile">
                 <img src="img/CTU_new_logo.png" alt="Profile Picture" class="sidebar-profile-pic">
                 <div class="sidebar-user-info">
@@ -44,6 +45,7 @@
                     <p id="userhandle">@ctu_dc</p>
                 </div>
             </div>
+            <button onclick="signOut()">Sign Out</button>
         </aside>
 
         <div class="main-content">
@@ -65,11 +67,17 @@
 
                     <div class="ud-content">
                         <p>The much-anticipated Teacher’s Day celebration held at CTU-DANAO took an unexpected turn when heavy rains poured down, causing disruptions to the event. 😔</p>
+
                         <img src="img/teachers-day-event.jpg" alt="Teacher's Day Event under rain" class="tweet-image">
+
                         <p>What was meant to be a joyous and heartfelt occasion turned into disappointment. Students and teachers were disheartened by the rain, with some students feeling especially upset by the sudden change in weather.</p>
+
                         <img src="img/2.jpg" alt="Disheartened students after the event" class="tweet-image">
+
                         <p>"We were excited to show our appreciation to our teachers, but the rain just ruined the moment for us," said one student. #TeachersDay #Rain</p>
+
                         <img src="img/3.jpg" alt="Student alone at the red table after event" class="tweet-image">
+
                         <p>Despite the unexpected challenges, the appreciation for teachers remained strong. ❤️ #Appreciation #BetterDaysAhead</p>
                     </div>
 
@@ -87,6 +95,6 @@
         </div>
     </div>
 
-    <script src="js/auth.js"></script> <!-- Link to JS -->
+    <script src="js/auth.js"></script>
 </body>
 </html>
